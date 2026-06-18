@@ -76,6 +76,9 @@ input[type=file]{display:none}
 .finp::placeholder{color:#5a5a5a}
 .gmaps{display:block;text-align:center;background:var(--mid);border:1px solid var(--border);color:var(--text);text-decoration:none;font-family:var(--disp);font-weight:700;letter-spacing:.5px;text-transform:uppercase;font-size:12px;padding:8px;border-radius:5px;margin-top:6px;transition:all .15s}
 .gmaps:hover{border-color:var(--acc);color:var(--acc)}
+.p-close-row{display:flex;justify-content:flex-end;margin-bottom:10px}
+.p-close{font-family:var(--disp);font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:5px 11px;border-radius:3px;border:1px solid var(--border);background:var(--mid);color:var(--muted);cursor:pointer;transition:all .15s}
+.p-close:hover{border-color:var(--S);color:var(--S-tx)}
 
 #export-btn{font-family:var(--disp);font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:5px 12px;border-radius:3px;border:1px solid rgba(90,176,232,.45);background:rgba(90,176,232,.12);color:var(--acc);cursor:pointer;white-space:nowrap;transition:all .15s;display:flex;align-items:center;gap:5px}
 #export-btn:hover{background:var(--acc);color:#001018}
@@ -149,18 +152,18 @@ const CAT={
   'Single Site': {c:'#E0457B',tx:'#FF85AC',bg:'rgba(224,69,123,.15)', bd:'rgba(224,69,123,.32)'},
 };
 const LOC=[
-  {id:'A1', cat:'Bundle A', desc:'Theik Pan Road, Near 73rd Road, Chan Aye Thar Zan', lat:21.952872, lng:96.088325, url:'https://maps.app.goo.gl/DeqigUyNRtpaBMCb9'},
-  {id:'A2', cat:'Bundle A', desc:'78th Main Road, Near Sagaing Road, Chan Mya Thar Zi', lat:21.940282, lng:96.087513, url:'https://maps.app.goo.gl/uyXYr9XMYLXkQZKEA'},
-  {id:'A3', cat:'Bundle A', desc:'62nd Road, Near 41st St, Manawyaman, Chan Mya Thar Zi', lat:21.956817, lng:96.111571, url:'https://maps.app.goo.gl/YHyZxrgyRFBNNtXm8'},
-  {id:'A4', cat:'Bundle A', desc:'Hnyar Roundabout, Near Bridge, Amarapura', lat:21.873826, lng:96.002393, url:'https://maps.app.goo.gl/odrWJpCiXHhWKHBM9'},
+  {id:'A1', cat:'Bundle A', desc:'Theik Pan Road, Corner of 78th Street, Mahar Aung Myay, Mandalay', lat:21.952872, lng:96.088325, url:'https://maps.app.goo.gl/DeqigUyNRtpaBMCb9'},
+  {id:'A2', cat:'Bundle A', desc:'78th Main Street, Near Sagaing Road Junction, Chan Mya Thar Zi, Mandalay', lat:21.940282, lng:96.087513, url:'https://maps.app.goo.gl/uyXYr9XMYLXkQZKEA'},
+  {id:'A3', cat:'Bundle A', desc:'62nd Street, Corner of 41st Street, Mahar Aung Myay, Mandalay', lat:21.956817, lng:96.111571, url:'https://maps.app.goo.gl/YHyZxrgyRFBNNtXm8'},
+  {id:'A4', cat:'Bundle A', desc:'Near Hnar Pauk Roundabout, Mandalay-Monywa Road, Amarapura, Mandalay', lat:21.873826, lng:96.002393, url:'https://maps.app.goo.gl/odrWJpCiXHhWKHBM9'},
 
-  {id:'B1', cat:'Bundle B', desc:'78th x 109th St, Near Old Airport, Chan Mya Thar Zi, Inbound View', lat:21.934945, lng:96.086984, url:'https://maps.app.goo.gl/fNt1DbBhNgedvseM8'},
-  {id:'B2', cat:'Bundle B', desc:'78th St, Between 35 x 36 St, Mahar Aung Myay Tsp', lat:21.951569, lng:96.105581, url:'https://maps.app.goo.gl/v5d7sxz6CayT6NPe6'},
+  {id:'B1', cat:'Bundle B', desc:'78th St & 109th St, Near Old Airport, Chan Mya Tharsi Tsp, Mandalay', lat:21.934945, lng:96.086984, url:'https://maps.app.goo.gl/fNt1DbBhNgedvseM8'},
+  {id:'B2', cat:'Bundle B', desc:'78th St, Between 35 x 36 St, Mahar Aung Myay Tsp, Mandalay', lat:21.968160, lng:96.086250, url:'https://maps.app.goo.gl/XKN1bnDWb4Ur3Ln46'},
   {id:'B3', cat:'Bundle B', desc:'Entrance of Industry Zone (2), Near Max Petrol Station, Yangon-Mandalay Road, Pyigyitagon', lat:21.880755, lng:96.091442, url:'https://maps.app.goo.gl/ZFbKvkeDEqCjx7tH9'},
-  {id:'B4', cat:'Bundle B', desc:'No. (33/C), Corner of 78th & 28th Street, Chan Aye Thar Zan', lat:21.980093, lng:96.087263, url:'https://maps.app.goo.gl/jTg2Uf8GxMY1jemj9'},
-  {id:'B5', cat:'Bundle B', desc:'78th Street, Inside No.(2) Military Transit Compound, Chan Aye Thar Zan', lat:21.979075, lng:96.086942, url:'https://maps.app.goo.gl/v6kma5g15dWV5bN5A'},
-  {id:'B6', cat:'Bundle B', desc:'Near Pwint Oo Furniture, Inside No.(2) Military Transit Compound, 78th Street, Chan Aye Thar Zan', lat:21.979546, lng:96.086933, url:'https://maps.app.goo.gl/TvMCZC9csg5Z6QUE8'},
-  {id:'B7', cat:'Bundle B', desc:'73rd Street, Between 37th & 38th Street, Maha Aung Myay', lat:21.964724, lng:96.094705, url:'https://maps.app.goo.gl/9AcAfcacxqrqTzfn7'},
+  {id:'B4', cat:'Bundle B', desc:'No. (33/C), Corner of 78th & 28th Street, Chanayethazan Township, Mandalay', lat:21.980093, lng:96.087263, url:'https://maps.app.goo.gl/jTg2Uf8GxMY1jemj9'},
+  {id:'B5', cat:'Bundle B', desc:'78th Street, Inside No.(2) Military Transit Compound, Chanayethazan Township, Mandalay', lat:21.979075, lng:96.086942, url:'https://maps.app.goo.gl/v6kma5g15dWV5bN5A'},
+  {id:'B6', cat:'Bundle B', desc:'Near Pwint Oo Furniture, Inside No.(2) Military Transit Compound, 78th Street, Chanayethazan', lat:21.979546, lng:96.086933, url:'https://maps.app.goo.gl/TvMCZC9csg5Z6QUE8'},
+  {id:'B7', cat:'Bundle B', desc:'73rd Street, Between 37th & 38th Street, Maha Aungmyay Township, Mandalay', lat:21.964724, lng:96.094705, url:'https://maps.app.goo.gl/9AcAfcacxqrqTzfn7'},
 
   {id:'S1', cat:'Single Site', desc:'Theik Pan Road & Corner of 62nd Street, Mahar Aung Myay Township, Mandalay', lat:21.951452, lng:96.111574, url:'https://maps.app.goo.gl/AZ27K2HhXjdukRjRA'},
 ];
@@ -217,9 +220,18 @@ function renderMarkers(){
 }
 function selectLoc(id){
   selId=id; renderMarkers();
-  showDetail(LOC.find(l=>l.id===id));
+  const loc=LOC.find(l=>l.id===id);
+  showDetail(loc);
+  map.flyTo([loc.lat,loc.lng], Math.max(map.getZoom(),14), {duration:.6});
   if(window.innerWidth<=760) document.getElementById('panel').classList.add('open');
 }
+function closePanel(){
+  selId=null; renderMarkers();
+  document.getElementById('p-detail').style.display='none';
+  document.getElementById('p-empty').style.display='';
+  document.getElementById('panel').classList.remove('open');
+}
+map.on('click', closePanel);
 
 function icon(path){return `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${path}</svg>`;}
 function showDetail(loc){
@@ -236,6 +248,7 @@ function showDetail(loc){
         oninput="saveMeta('${loc.id}','${f.k}',this.value)">
     </div>`).join('');
   el.innerHTML=`
+    <div class="p-close-row"><button class="p-close" onclick="closePanel()" title="Close">&#215; Close</button></div>
     <div class="photo-wrap${photo?' has-img':''}" onclick="if(!this.classList.contains('has-img'))trigUp()">
       ${photo?`<img src="${photo}" alt="KV">`:''}
       <div class="upload-hint">
